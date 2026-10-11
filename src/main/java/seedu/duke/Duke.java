@@ -10,6 +10,9 @@ import seedu.duke.model.Order;
 import seedu.duke.model.OrderList;
 
 public class Duke {
+    /**
+     * Main entry-point for the java.duke.Duke application.
+     */
     public static void main(String[] args) {
         String banner = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
