@@ -1,3 +1,4 @@
+
 package seedu.duke;
 
 import java.util.Scanner;
@@ -9,15 +10,13 @@ import seedu.duke.model.Order;
 import seedu.duke.model.OrderList;
 
 public class Duke {
-    /**
-     * Main entry-point for the java.duke.Duke application.
-     */
     public static void main(String[] args) {
         String banner = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
                 + "| |_| | |_| |   <  __/\n"
                 + "|____/ \\__,_|_|\\_\\___|\n";
+
         System.out.println(banner);
         System.out.println("What is your name?");
 
@@ -33,7 +32,21 @@ public class Duke {
 
         System.out.println("Menu:");
         System.out.println(menu);
-        System.out.println("Orders:");
-        System.out.println(orders);
+
+        while (true) {
+            String command = in.nextLine().trim();
+
+            if (command.equalsIgnoreCase("list")) {
+                System.out.println("Here are the orders in your list:");
+                System.out.println(orders);
+            } else if (command.equalsIgnoreCase("bye")) {
+                System.out.println("Goodbye!");
+                break;
+            } else {
+                System.out.println("Unknown command.");
+            }
+        }
+
+        in.close();
     }
 }
